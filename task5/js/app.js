@@ -1,10 +1,17 @@
-function sum(a) {          
-	return function sum2(b) {
-		if (typeof b === 'undefined') {
-			return a;
-		}
-		return sum(a + b);
-	}
+function sum(a) {
+
+  let result = a;
+
+  function inner(b) {
+    result += b;
+    return inner;
+  }
+
+  inner.toString = function() {
+    return result;
+  };
+
+  return inner;
 }
 
-console.log(sum(5)(6)(7)());
+console.log(sum(1)(3)(3));

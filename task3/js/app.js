@@ -28,6 +28,7 @@ function Man(params) {
 };
 
 Man.prototype = Object.create(Human.prototype);
+Man.prototype.constructor = Man;
 
 Man.prototype.playFootball = function() {
 	console.log(`${this.firstName} plays football`);

@@ -10,21 +10,21 @@ function func3(res) {
   return console.log(res); //возвращаем результат
 }
 
-// 7.1: 2
+// 7.1: 2 - все проходит ок
 func1()
   .then(function() {
     return func2();
   })
   .then(func3)
-// 7.2: undefined
+// 7.2: undefined - потому что не вернули func2()
 func1()
   .then(function() {
     func2();
   })
   .then(func3)
-// 7.3: 1 - тут непонятно, почему 1
+// 7.3: 1 - потому что не передали ф-ю, он проходит вхолостую и будет null
 func1()
-  .then(func2())
+  .then(func2())//null
   .then(func3)
 //7.4: 2
 func1()

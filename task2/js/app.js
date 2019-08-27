@@ -6,11 +6,7 @@ function isPalindrom(str) {
   let str1 = str.toLowerCase();
   let str2 = str1.split('').reverse().join('').toLowerCase();
   
-  if (str1 === str2) {
-    return true;
-  } else {
-    return false;
-  }
+  return str1 === str2;
 }
 
 console.log(isPalindrom(str1));
